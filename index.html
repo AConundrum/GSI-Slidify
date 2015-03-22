@@ -1,1 +1,148 @@
-default
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Global Sea Ice Extent</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Global Sea Ice Extent">
+  <meta name="author" content="Edward J Hopkins">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Global Sea Ice Extent</h1>
+    <h2></h2>
+    <p>Edward J Hopkins<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Global Sea Ice Extent</h2>
+  </hgroup>
+  <article data-timings="">
+    <h1>Motivation:</h1>
+
+<ul>
+<li>There are numerous online blogs that showcase global sea-ice data with varying levels of interactivity. I took my favorite (of the simple) data sets and built an interactive plot that allows one to zoom in to the desired time frame of interest.</li>
+</ul>
+
+<h1>Shiny app:</h1>
+
+<ul>
+<li>Shiny is an R (programming language) package that makes it easy to build interactive web applications. One builds(codes) a user interface and a server. The server incorporates the &quot;brains&quot; of how all of the elements and data interact based upon developer and user inputs.<br></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Pre-processing</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Original data and documentation is located at: (Section 3.3.4)</li>
+<li><p><a href="http://nsidc.org/data/docs/noaa/g02135_seaice_index/">http://nsidc.org/data/docs/noaa/g02135_seaice_index/</a></p></li>
+<li><p>Two sets of data are the the core of the product, the arctic ice extent set and the antarctic ice extent set. Each set contains a daily, unbroked record of sea ice since 1989. The two sets are cleaned to result in a <code>Date</code> column that contains the day and year of the observation, and an <code>Observation</code> column containing the sea ice extent on that day in units of [thousand square kilometers] </p></li>
+<li><p>A <code>decomposition</code> function is applied to the observed data to calculate a seasonal extent. A global data set is the addition of the arctic and antarctic data sets.  </p></li>
+<li><p>The next slide shows an example plot produced by the shiny app.</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Implementation</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/simple-plot-1.png" title="plot of chunk simple-plot" alt="plot of chunk simple-plot" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Distribution</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The product is located at the following link:<br>
+<a href="http://aconundrum.shinyapps.io/Global-Sea-Ice">http://aconundrum.shinyapps.io/Global-Sea-Ice</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Global Sea Ice Extent'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Pre-processing'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Implementation'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Distribution'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
